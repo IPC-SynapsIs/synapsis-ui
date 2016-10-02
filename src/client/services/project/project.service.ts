@@ -37,7 +37,7 @@ export class ProjectService {
   }
 
   getProjectById(projectId: String): Observable<Project> {
-        return this.http.get(`'http://localhost:8082/api/projet/'${projectId}`)
+        return this.http.get(`http://localhost:8082/api/projet/${projectId}`)
             .map(response => response.json());
   }
 

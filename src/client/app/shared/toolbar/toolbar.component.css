@@ -1,3 +1,8 @@
+.navbar-inverse {
+  background-color: #51b6bf;
+  border-color: #51b6bf;
+}
+
 :host {
   background-color: #106cc8;
   color: rgba(255, 255, 255, 0.87);
@@ -14,10 +19,14 @@ h1 {
   line-height: 48px;
 }
 
-.more {
-  background: url("./assets/svg/more.svg");
-  float: right;
-  height: 24px;
-  margin-top: 12px;
-  width: 24px;
+.logo img{
+  display: inline-block;
+  height: 50px;
 }
+
+.logo{
+  font-size: xx-large;
+  font-family: fantasy;
+  color: white;
+}
+
