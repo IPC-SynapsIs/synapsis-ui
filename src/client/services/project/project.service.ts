@@ -18,6 +18,7 @@ export class Project {
 export class ProjectService {
 
     searchEvent: EventEmitter<any> = new EventEmitter();
+    ENDPOINT : string = "http://52.29.169.103/api/projet/";
 
   /**
    * Creates a new ProjectService with the injected Http.
@@ -31,13 +32,13 @@ export class ProjectService {
    * @return {string[]} The Observable for the HTTP request.
    */
   get(): Observable<Project[]> {
-    return this.http.get('http://localhost:8082/api/projet/')
+    return this.http.get(this.ENDPOINT)
                     .map((res: Response) => res.json())
                     .catch(this.handleError);
   }
 
   getProjectById(projectId: String): Observable<Project> {
-        return this.http.get(`http://localhost:8082/api/projet/${projectId}`)
+        return this.http.get(this.ENDPOINT+"/"+projectId)
             .map(response => response.json());
   }
 
@@ -46,7 +47,7 @@ export class ProjectService {
    * @return {string[]} The Observable for the HTTP request.
    */
   search(inTerm: string): Observable<Project[]> {
-    return this.http.get('http://localhost:8082/api/projet/criterias?title='+encodeURIComponent(inTerm))
+    return this.http.get(this.ENDPOINT+'/criterias?title='+encodeURIComponent(inTerm))
         .map((res: Response) => res.json())
         .catch(this.handleError);
   }
