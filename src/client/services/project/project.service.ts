@@ -47,7 +47,7 @@ export class ProjectService {
    * @return {string[]} The Observable for the HTTP request.
    */
   search(inTerm: string): Observable<Project[]> {
-    return this.http.get(this.ENDPOINT+'/criterias?title='+encodeURIComponent(inTerm))
+    return this.http.get(this.ENDPOINT+'/criterias/title?title='+encodeURIComponent(inTerm))
         .map((res: Response) => res.json())
         .catch(this.handleError);
   }

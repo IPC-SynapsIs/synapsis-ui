@@ -3,7 +3,7 @@
     <div class="caption">
         <h4><a [routerLink]="['/projects', project.id]">{{ project.title }}</a></h4>
         <p>{{ project.description }}</p>
-        <div *ngFor="let category of project.categories | async" class="">
+        <div *ngFor="let category of project.categories" class="">
             {{category}}
         </div>
     </div>
